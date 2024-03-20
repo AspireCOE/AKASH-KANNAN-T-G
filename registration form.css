@@ -1,0 +1,30 @@
+#one {
+    background-color: rgb(168, 231, 240);
+    margin: 200px;
+    display: inline-block;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    opacity: 0;
+    z-index: 4;
+    border-radius: 5%;
+}
+
+form {
+    position: relative;
+    top: -670px;
+    left: 600px;
+}
+body {
+    background-color: lightgray;
+    background-image: url("https://img.freepik.com/free-photo/desk-concept-arrangement-with-glasses_23-2148604886.jpg?w=740&t=st=1710490201~exp=1710490801~hmac=84e52c071c2969b0675b103f58fe2dfc1b355007bff621362828234b50faeedd");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.two {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
