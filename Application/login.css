@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    color:white;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    background: url('pexels-joyston-judah-933054.jpg') no-repeat;
+    background-size: cover;
+}
+.container{
+    background-color: transparent;
+    width:420px;
+    border-radius: 10px;
+    padding:30px 40px;
+
+}
+.container h1{
+    font-size: 40px;
+    text-align: center;
+}
+.container .input-box
+{
+   position: relative;
+
+   width:95%;
+   height: 50px;
+   margin:30px 0px;
+
+
+}
+.input-box input{
+    width:100%;
+    height:100%;
+    background: transparent;
+    border:none;
+    outline:none;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:40px;
+    font-size: 16px;
+    color: white;
+    padding-left:20px;
+}
+.input-box input::placeholder{
+    color: white;
+}
+.input-box input{
+    cursor: pointer;
+}
+.input-box i{
+    position: absolute;
+    right:2px;
+    top:30%;
+    font-size: 20px;
+    color: white;
+}
+.remember
+{
+    display:flex;
+    justify-content: space-between;
+    margin-top: -10px;
+}
+.register
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+.remember input{
+    accent-color: white;
+    margin-right:5px;
+}
+.remember a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.remember a:hover{
+    text-decoration: underline;
+}
+.btn
+{
+    width:100%;
+    color: black;
+    height: 45px;
+    border:none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+}
+.register a{
+    text-decoration: none;
+    font-weight: 600;
+   }
+.register a:hover{
+ text-decoration: underline;
+}
