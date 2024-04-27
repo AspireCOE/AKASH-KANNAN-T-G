@@ -1,0 +1,15 @@
+.zero{
+    background-color:ee2677;
+}
+button{
+    width:30%;
+    height: 40px;
+}
+input{
+    width:30%;
+    height: 20px;
+    padding:20px;
+}
+p{
+    font-size: 30px;
+}

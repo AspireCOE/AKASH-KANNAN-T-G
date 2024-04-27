@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <p id="one"></p>
+    <script>
+        let myVar = setInterval(Timer, 2000);
+ 
+        function Timer() {
+            document.getElementById("one")
+                .innerHTML += "<p>Hi</p>";
+        }
+    </script>
+</body>
+ 
+</html>
+ 

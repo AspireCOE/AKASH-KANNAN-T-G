@@ -1,0 +1,21 @@
+const arr=[];
+arr[0]="Akash";
+arr[1]="Kannan";
+arr[2]="Santhosh";
+arr[3]="Jonggoo";
+console.log(arr);
+let a=arr.push("Gun Park");
+console.log(a);
+let b=arr.unshift("James Lee");
+console.log(arr);
+console.log(b);
+let c=arr.shift();
+console.log(c);
+const newarr=arr.slice(1);
+console.log(newarr);
+console.log(newarr.reverse());
+const arr1=newarr.join();
+console.log(arr1);
+const arr2=arr1.split(',');
+console.log(arr2);
+

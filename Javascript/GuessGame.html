@@ -1,0 +1,34 @@
+<head>
+    <title>GuessGame</title>
+    <link rel="icon" href="qm.webp">
+    <link rel="stylesheet" href="GuessGame.css">
+</head>
+<body class="zero">
+<center><h1>Guess the number</h1>
+<input id="one">
+<button onclick="Generate()" id="three">Check</button>
+<p id="Display"></p>
+<p id="sc"></p></center>
+<script>
+    var a=document.getElementById("one");
+    var d=document.getElementById("Display")
+    var s=document.getElementById("sc")
+    var c=document.getElementById("three")
+    var random=Math.floor((Math.random()*10))+1
+    var score=10
+    function Generate()
+    {
+        c.style.backgroundColor="Red"
+        if(random==a.value)
+        {
+           d.textContent="You are Right"
+           alert("You are Amazing You Won")
+        }
+        else{
+            d.textContent="You are wrong"
+            score=score-1;
+            s.textContent="Your Score is:"+score
+        }
+    }
+</script>
+</body>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>To do List</title>
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <center>
+        <h1>To do List</h1>
+        <input id="one">
+        <button onclick="add()">Add</button>
+        <ul id="two">
+        </ul>
+        </center>
+        <script>
+            var a=document.getElementById("one")
+            var b=document.getElementById("two")
+            function add()
+            {
+                var listele=document.createElement("li")
+                listele.innerHTML=a.value+"<button onclick='del(event)'>Delete</button>"
+               b.append(listele)
+            }
+            function del(event)
+            {
+                event.target.parentElement.remove()
+
+            }
+        </script>
+    </body>
+</html>
