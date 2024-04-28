@@ -1,3 +1,33 @@
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  var username = document.getElementById("email").value;
+  var pass = document.getElementById("password").value;
+  var storedData = localStorage.getItem("registerdata");
+  var userData = storedData ? JSON.parse(storedData) : [];
+  console.log(username)
+  console.log(storedData)
+  var isEmailRegistered = userData.some(function(item) {
+    console.log(storedData)
+    return item.email === username;
+  });
+
+  if (isEmailRegistered) {
+    document.getElementById("success").style.display = "block";
+    console.log(storedData)
+    log();
+     
+}
+  else{
+    document.getElementById("message").style.display = "block";
+    return; 
+  }
+
+  
+  document.getElementById("loginForm").reset();
+
+  
+});
 let wrap=document.querySelector(".adding");
 let container=JSON.parse(localStorage.getItem("data")) || [];
 let arr=[
@@ -90,18 +120,12 @@ let pushingitems=(id)=>{
   localStorage.setItem("data",JSON.stringify(container));
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+let log=()=>{
+  let loginForm=document.querySelector(".login-form-container");
+  document.querySelector("#close").onclick=()=>{
+    loginForm.classList.remove('active');
+    console.log("loggedin")
+}
 searchForm=document.querySelector('.search-form');
 document.querySelector('#search-btn').onclick=()=>{
     searchForm.classList.toggle('active');
