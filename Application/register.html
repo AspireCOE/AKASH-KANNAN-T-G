@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="title">Registration</div>
-        <form>
+        <form id="register">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
@@ -21,19 +21,19 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" placeholder="Enter your email" required>
+                    <input type="email" placeholder="Enter your email" required>
                 </div>
                 <div class="input-box">
                     <span class="details">phone number</span>
-                    <input type="text" placeholder="Enter your phone number" required>
+                    <input type="number" placeholder="Enter your phone number" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="text" placeholder="Enter your password" required>
+                    <input type="password" placeholder="Enter your password" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm Password</span>
-                    <input type="text" placeholder="Confirm Password"  required>
+                    <input type="password" placeholder="Confirm Password"  required>
                 </div>
             </div>
             <div class="gender-details">
@@ -64,6 +64,35 @@
             </div>
 
         </form>
+        <p id="message" style="display:none; color:red;">Email is already registered!</p>
     </div>
+    <script>
+        document.getElementById("register").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+  var username = document.getElementById("email").value;
+  var pass = document.getElementById("password").value;
+  console.log(username)
+  var storedData = localStorage.getItem("registerdata");
+  var registerdata = storedData ? JSON.parse(storedData) : [];
+  var isEmailRegistered = registerdata.some(function(item) {
+    return item.email === username;
+  });
+
+  if (isEmailRegistered) {
+    document.getElementById("message").style.display = "block";
+    return; 
+  }
+  var passwordRegex = /^(?=.*[!@#$%^&*()\-_+=|\\{}[\]:;"'<>,.?/])(?=.*\d)(?!.*([A-Za-z0-9])\1{2}).{8,}$/;
+
+  if (!passwordRegex.test(pass)) {
+    document.getElementById("passwordMessage").style.display = "block";
+    return; 
+  }
+  registerdata.push({ email: username, password: pass });
+
+  localStorage.setItem("registerdata", JSON.stringify(registerdata));
+  document.getElementById("register").reset();
+});
+    </script>
 </body>
 </html>
