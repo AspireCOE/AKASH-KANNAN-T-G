@@ -45,7 +45,7 @@
 
     <div class="login-form-container">
         <div id="close" class="fas fa-times"></div>
-        <form>
+        <form id="loginForm">
             <h3>sign in</h3>
             <span>username</span>
             <input type="email" class="input-box" placeholder="Enter your email">
@@ -60,6 +60,8 @@
             <p>forget password? <a href="#">click here</a></p>
             <p>don't have an account? <a href="register.html">create one</a></p>
         </form>
+        <p id="message" style="display:none; color:red;">You have not registered yet please register and try to login</p>
+        <p id="success" style="display:none; color:green;">You have successfully logged in</p>
     </div>
    <section class="home" id="#home">
     <div class="row">
