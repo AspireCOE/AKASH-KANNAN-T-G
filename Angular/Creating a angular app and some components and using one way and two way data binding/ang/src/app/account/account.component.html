@@ -1,0 +1,40 @@
+<p>account works!</p>
+Choose Category:<select [(ngModel)]="AccountType">
+    <option>Current</option>
+    <option>Savings</option>
+    <option>Salary</option>
+    <option>Fixed deposit</option>
+</select>
+<table >
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Account Holder Name</th>
+            <th>Type Of Account</th>
+            <th>Amount</th>
+            <th>Bank Name</th>
+            <th>Date Of Create</th>
+            <th>Account Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(account of accounts;track account) {
+            <tr>
+                @if (account.TypeOfAccount == AccountType)
+                {
+                    <td>{{account.AccountNumber}}</td>
+                    <td>{{account.AccountHolderName}}</td>
+                    <td>{{account.TypeOfAccount}}</td>
+                    <td>{{account.Amount}}</td>
+                    <td>{{account.BankName}}</td>
+                    <td>{{account.DateOfCreate|date:"shortDate"}}</td>
+                    <td [ngSwitch]="accountCondition(account.Amount)" >
+                        <div *ngSwitchCase="'Inactive'">Inactive</div>
+                        <div *ngSwitchCase="'Active'">Active</div>
+                        <div *ngSwitchCase="'Loyal'">Loyal</div>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
